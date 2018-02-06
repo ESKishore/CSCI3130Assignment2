@@ -8,20 +8,27 @@ import static org.junit.Assert.*;
  */
 
 public class ValidatorUnitTest {
+
+    public String password;
     @Test
     public void PwdIsOK(){
+        Validator v = new Validator();
         Boolean a;
         MainActivity mainActivity = new MainActivity();
-        if (Validator.validatePassword("kishore123") == true)
+        password = mainActivity.pwd;
+        if (v.validatePassword(password) == true)
         {
             a = true;
+
         }
         else
         {
             a = false;
+
         }
 
         assertTrue("True" , a);
+
     }
 
 }
